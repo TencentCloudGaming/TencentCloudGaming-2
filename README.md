@@ -1,8 +1,7 @@
 # 글로벌 서버의 백 엔드 아키텍처를 위한 기술적 솔루션
+두 게임 서버의 백 엔드 아키텍처의 장점과 단점은 지난 호에서 설명한 바와 같습니다. 이번에는 글로벌 서버의 기술적인 솔루션 중 하나를 소개합니다.
 
-## 두 게임 서버의 백 엔드 아키텍처의 장점과 단점은 지난 호에서 설명한 바와 같습니다. 이번에는 글로벌 서버의 기술적인 솔루션 중 하나를 소개합니다.
-
-1. 글로벌 서버 아키텍처
+## 1. 글로벌 서버 아키텍처
 
 <img width="386" alt="image" src="https://user-images.githubusercontent.com/92770458/142786226-b68fdaad-f9a8-4d67-80df-b32168376fe9.png">
 
@@ -10,19 +9,21 @@
 따라서 글로벌 서버를 실현하기 위한 주요 기술적 수단으로서 서로 다른 지역에 있는 플레이어가 배틀 서버에 액세스할 때의 네트워크 품질과 안전성을 향상시키는 네트워크 액셀러레이션을 채용하고 있습니다.
 글로벌 서버, 네트워크 액셀러레이션 솔루션에는 크게 2가지 아이디어가 있습니다.
 
-## 1. 물리적으로 가능한 한 플레이어 가까이에 서버를 설치
-## 2. 장거리 공중 회선 전송을 안정적인 인트라넷 전송으로 변경
+1. 물리적으로 가능한 한 플레이어 가까이에 서버를 설치
+2. 장거리 공중 회선 전송을 안정적인 인트라넷 전송으로 변경
 
 카테고리 I, 플레이어와 서버의 물리적 거리를 단축
 예를 들어 일반적인 CDN 기술로는 화상 등의 일부 정적 콘텐츠를 고속화할 수 있습니다. 텐센트 게임즈는 CDN+COS를 사용하여 정적 콘텐츠를 고속화합니다.
 
 카테고리 II, 장거리 공중 회선 전송을 자체 제작한 인트라넷 전송으로 변경
-예: 
-텐센트 클라우드: 	글로벌 애플리케이션 액셀러레이션 GAAP	https://cloud.tencent.com/product/gaap
 
-텐센트 클라우드: 	Anycast Public Network Acceleration AIA	https://cloud.tencent.com/product/aia
+예시: 
 
-AWS: 	Global Accelerator	https://amazonaws-china.com/cn/global-accelerator/
+### 텐센트 클라우드: 	글로벌 애플리케이션 액셀러레이션 GAAP	https://cloud.tencent.com/product/gaap
+
+### 텐센트 클라우드: 	Anycast Public Network Acceleration AIA	https://cloud.tencent.com/product/aia
+
+### AWS: 	Global Accelerator	https://amazonaws-china.com/cn/global-accelerator/
 
 이들 제품은 모두 독자적인 인트라넷을 사용하여 지역 간 액셀러레이션을 실현하고 있습니다.
 텐센트 클라우드에 대한 지식이 어느 정도 있으므로 텐센트 클라우드를 예로 들어 그 원리를 간단히 소개하겠습니다.
